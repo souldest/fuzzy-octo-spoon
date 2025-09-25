@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Data Solutions | Datenlösungen</title>
+<meta name="description" content="AI & Data Solutions bietet maßgeschneiderte Datenlösungen, Data Science, Machine Learning, Webentwicklung und Beratung für Unternehmen jeder Größe.">
+<meta name="keywords" content="AI, Data Science, Machine Learning, Business Intelligence, Webentwicklung, Prozessanalyse, Consulting">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#0f1724;--surface:#1e293b;--muted:#98a0ad;--accent-1:#0f4c81;--accent-2:#10b981;--accent-3:#8b5cf6;--radius:14px;}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:#e6eef6;line-height:1.45;transition:background 0.3s,color 0.3s;}
+body.light{--bg:#f4f7fb;--surface:#ffffff;--muted:#475569;color:#0b1220;}
+.container{max-width:1200px;margin:0 auto;padding:16px;}
+header{position:sticky;top:0;background:var(--surface);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;z-index:60;}
+header .brand{font-weight:700;font-size:1.2rem;}
+.nav{display:flex;flex-wrap:wrap;transition:max-height 0.3s ease;overflow:hidden;}
+.nav a{margin:0 6px;color:var(--muted);text-decoration:none;font-weight:600;font-size:0.9rem;}
+.nav a:hover{color:var(--accent-3);}
+.lang-switch button{margin-left:4px;padding:4px 8px;border-radius:6px;border:none;cursor:pointer;font-size:0.85rem;}
+.lang-switch button.active{background:var(--accent-1);color:white;}
+.mode-switch{margin-left:6px;cursor:pointer;padding:4px 8px;border-radius:6px;border:none;background:var(--accent-2);color:white;font-size:0.85rem;}
+section{padding:32px 0;}
+h2,h3,h4{color:var(--accent-1);}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.card{background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: 0 6px 15px rgba(0,0,0,0.6); transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, transform 0.5s; opacity:0; transform: translateY(20px);}
+.card.visible{opacity:1; transform: translateY(0);}
+.card:hover{transform: translateY(-8px); box-shadow: 0 18px 30px rgba(0,0,0,0.7);}
+.price-banner{padding:10px;border-radius:12px 12px 0 0;color:white;font-weight:700;text-align:center;margin-bottom:10px;}
+.card h4{margin-top:8px;color:#111827;}
+.card p{margin-top:6px;color:#475569;}
+.form-card{padding:14px;border-radius:12px;background:var(--surface);}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px;font-size:0.9rem;}
+button.btn-primary{background:#0f4c81;color:white;padding:8px 12px;border:none;border-radius:10px;cursor:pointer;transition:background 0.3s, transform 0.2s;font-size:0.9rem;}
+button.btn-primary:hover{background:#0d3a66;transform:translateY(-1px);}
+footer{padding:16px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05);font-size:0.85rem;}
+.hidden{display:none;}
+.hamburger{display:none;cursor:pointer;font-size:1.5rem;}
+html{scroll-behavior:smooth;}
+@media(max-width:768px){.nav{flex-direction:column;max-height:0;}.nav.active{max-height:1500px;}.nav a{margin:8px 0;}.hamburger{display:block;}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="brand"><strong>AI & Data Solutions</strong></div>
+<i class="fas fa-bars hamburger" id="hamburger"></i>
+<nav class="nav" id="nav-menu">
+<a href="#" data-section="about">Über uns</a>
+<a href="#" data-section="services">Leistungen</a>
+<a href="#" data-section="ai">KI-Angebote</a>
+<a href="#" data-section="contact">Kontakt</a>
+<a href="#" data-section="impressum">Impressum</a>
+<a href="#" data-section="privacy">Datenschutz</a>
+</nav>
+<div>
+<button class="lang-switch active" id="btn-de">DE</button>
+<button class="lang-switch" id="btn-en">EN</button>
+<button class="lang-switch" id="btn-fr">FR</button>
+<button class="mode-switch" id="mode-toggle">Modus</button>
+</div>
+</header>
+
+<main class="container">
+
+<!-- HERO Sections -->
+<section id="hero-de" class="lang-de">
+<h2>Maßgeschneiderte Datenlösungen für bessere Geschäftsentscheidungen</h2>
+<p>Strategie, Data Science und Engineering für KMUs und Enterprises.</p>
+</section>
+<section id="hero-en" class="lang-en hidden">
+<h2>Custom Data Solutions for Better Business Decisions</h2>
+<p>Strategy, Data Science, and Engineering for SMEs and Enterprises.</p>
+</section>
+<section id="hero-fr" class="lang-fr hidden">
+<h2>Solutions de données sur mesure pour de meilleures décisions commerciales</h2>
+<p>Stratégie, Data Science et ingénierie pour PME et entreprises.</p>
+</section>
+
+<!-- ÜBER UNS Sections -->
+<section id="about-de" class="lang-de">
+<h3>Über uns</h3>
+<p><strong>AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung in Datenanalyse, Statistik, Machine Learning und Data Engineering. Wir entwickeln maßgeschneiderte Lösungen für datengetriebene Arbeit, Prozessoptimierung und Wettbewerbsvorteile.</p>
+</section>
+<section id="about-en" class="lang-en hidden">
+<h3>About Us</h3>
+<p><strong>AI & Data Solutions</strong> is a team of experienced data analysts, data scientists, and consultants with over 15 years of experience in data analysis, statistics, machine learning, and data engineering. We develop tailored solutions to help companies work data-driven, optimize processes, and gain competitive advantages.</p>
+</section>
+<section id="about-fr" class="lang-fr hidden">
+<h3>À propos</h3>
+<p><strong>AI & Data Solutions</strong> est une équipe d'analystes de données, de data scientists et de consultants expérimentés avec plus de 15 ans d'expérience en analyse de données, statistiques, apprentissage automatique et ingénierie des données. Nous développons des solutions sur mesure pour aider les entreprises à travailler de manière axée sur les données, optimiser les processus et obtenir un avantage concurrentiel.</p>
+</section>
+
+<!-- LEISTUNGEN Sections -->
+<section id="services-de" class="lang-de">
+<h3>Unsere Leistungen</h3>
+<div class="grid-cards">
+<div class="card"><div class="price-banner">Strategie & Prozessanalyse</div><h4>Prozessanalyse & Optimierung</h4><p>Analyse Ihrer Geschäftsprozesse für datenbasierte Entscheidungen.</p></div>
+<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Datenanalysen & Prognosemodelle</h4><p>Statistische Modellierung, Ad-hoc-Analysen, Klassifikations- & Vorhersagemodelle.</p></div>
+<div class="card"><div class="price-banner">Machine Learning</div><h4>ML & Deep Learning Modelle</h4><p>Selbstlernende Systeme für komplexe Aufgaben.</p></div>
+<div class="card"><div class="price-banner">Business Intelligence</div><h4>Dashboards & Reporting</h4><p>Power BI, Tableau, automatisiertes Reporting, KPI-Monitoring.</p></div>
+<div class="card"><div class="price-banner">Datenmanagement</div><h4>Datenintegration & Warehouses</h4><p>ETL-Prozesse, Data Lakes, PostgreSQL, MongoDB, SAP BW, Pipeline-Optimierung.</p></div>
+<div class="card"><div class="price-banner">Cloud & Deployment</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Cloud-Lösungen, skalierbare Architekturen, CI/CD-Pipelines mit Docker, Jenkins, Kubernetes.</p></div>
+<div class="card"><div class="price-banner">Beratung & Training</div><h4>Strategie-Beratung & Workshops</h4><p>Datengetriebene Strategie, Digitalisierung, Prozessoptimierung, Schulungen in Data Science.</p></div>
+<div class="card"><div class="price-banner">Web & Homepage</div><h4>Moderne Webseiten & Responsive Design</h4><p>Professionelle Webseiten, modernes Webdesign, responsive Layouts.</p></div>
+</div>
+</section>
+
+<section id="services-en" class="lang-en hidden">
+<h3>Our Services</h3>
+<div class="grid-cards">
+<div class="card"><div class="price-banner">Strategy & Process Analysis</div><h4>Process Analysis & Optimization</h4><p>Analyze your business processes to make data-driven decisions.</p></div>
+<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Data Analysis & Forecast Models</h4><p>Statistical modeling, ad-hoc analysis, classification & prediction models.</p></div>
+<div class="card"><div class="price-banner">Machine Learning</div
+<div class="card"><div class="price-banner">Machine Learning</div><h4>ML & Deep Learning Models</h4><p>Self-learning systems for complex tasks.</p></div>
+<div class="card"><div class="price-banner">Business Intelligence</div><h4>Dashboards & Reporting</h4><p>Power BI, Tableau, automated reporting, KPI monitoring.</p></div>
+<div class="card"><div class="price-banner">Data Management</div><h4>Data Integration & Warehouses</h4><p>ETL processes, data lakes, PostgreSQL, MongoDB, SAP BW, pipeline optimization.</p></div>
+<div class="card"><div class="price-banner">Cloud & Deployment</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Cloud solutions, scalable architectures, CI/CD pipelines with Docker, Jenkins, Kubernetes.</p></div>
+<div class="card"><div class="price-banner">Consulting & Training</div><h4>Strategy Consulting & Workshops</h4><p>Data-driven strategy, digitalization, process optimization, training in Data Science.</p></div>
+<div class="card"><div class="price-banner">Web & Development</div><h4>Modern Websites & Responsive Design</h4><p>Professional websites, modern web design, responsive layouts.</p></div>
+</div>
+</section>
+
+<section id="services-fr" class="lang-fr hidden">
+<h3>Nos Services</h3>
+<div class="grid-cards">
+<div class="card"><div class="price-banner">Stratégie & Analyse des Processus</div><h4>Analyse & Optimisation des Processus</h4><p>Analyse de vos processus pour des décisions basées sur les données.</p></div>
+<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Analyses & Modèles de Prévision</h4><p>Modélisation statistique, analyses ad-hoc, modèles de classification et de prédiction.</p></div>
+<div class="card"><div class="price-banner">Machine Learning</div><h4>Modèles ML & Deep Learning</h4><p>Systèmes auto-apprenants pour des tâches complexes.</p></div>
+<div class="card"><div class="price-banner">Business Intelligence</div><h4>Tableaux de bord & Reporting</h4><p>Power BI, Tableau, reporting automatisé, suivi des KPI.</p></div>
+<div class="card"><div class="price-banner">Gestion des Données</div><h4>Intégration & Data Warehouses</h4><p>ETL, Data Lakes, PostgreSQL, MongoDB, SAP BW, optimisation des pipelines.</p></div>
+<div class="card"><div class="price-banner">Cloud & Déploiement</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Solutions cloud, architectures scalables, pipelines CI/CD avec Docker, Jenkins, Kubernetes.</p></div>
+<div class="card"><div class="price-banner">Consulting & Formation</div><h4>Consulting & Workshops</h4><p>Stratégie axée sur les données, digitalisation, optimisation des processus, formation Data Science.</p></div>
+<div class="card"><div class="price-banner">Web & Développement</div><h4>Sites Web Modernes & Responsive</h4><p>Sites professionnels, design moderne, layouts responsives.</p></div>
+</div>
+</section>
+
+<!-- KI-Angebote Placeholder (optional) -->
+<section id="ai-de" class="lang-de">
+<h3>KI-Angebote</h3>
+<p>Wir entwickeln KI-gestützte Lösungen für Automatisierung, Vorhersagen und Optimierung von Geschäftsprozessen.</p>
+</section>
+<section id="ai-en" class="lang-en hidden">
+<h3>AI Solutions</h3>
+<p>We develop AI-based solutions for automation, prediction, and optimization of business processes.</p>
+</section>
+<section id="ai-fr" class="lang-fr hidden">
+<h3>Solutions IA</h3>
+<p>Nous développons des solutions basées sur l’IA pour l’automatisation, la prédiction et l’optimisation des processus métiers.</p>
+</section>
+
+<!-- Kontakt Sections -->
+<section id="contact-de" class="lang-de">
+<h3>Kontakt</h3>
+<div class="form-card">
+<form action="https://formspree.io/f/xeolryra" method="POST">
+<label for="name-de">Name</label>
+<input id="name-de" type="text" name="name" placeholder="Name" required>
+<label for="email-de">E-Mail</label>
+<input id="email-de" type="email" name="email" placeholder="E-Mail" required>
+<label for="message-de">Nachricht</label>
+<textarea id="message-de" name="message" placeholder="Ihre Nachricht" rows="5" required></textarea>
+<button type="submit" class="btn-primary">Senden</button>
+</form>
+<p>Adresse: Obere Waiblinger Strasse 147a, 70374 Stuttgart | Telefon: 0049 176 31591931 | E-Mail: estaghvirou.b@gmail.com</p>
+</div>
+</section>
+<section id="contact-en" class="lang-en hidden">
+<h3>Contact</h3>
+<div class="form-card">
+<form action="https://formspree.io/f/xeolryra" method="POST">
+<label for="name-en">Name</label>
+<input id="name-en" type="text" name="name" placeholder="Name" required>
+<label for="email-en">Email</label>
+<input id="email-en" type="email" name="email" placeholder="Email" required>
+<label for="message-en">Message</label>
+<textarea id="message-en" name="message" placeholder="Your message" rows="5" required></textarea>
+<button type="submit" class="btn-primary">Send</button>
+</form>
+<p>Address: Obere Waiblinger Strasse 147a, 70374 Stuttgart | Phone: 0049 176 31591931 | Email: estaghvirou.b@gmail.com</p>
+</div>
+</section>
+<section id="contact-fr" class="lang-fr hidden">
+<h3>Contact</h3>
+<div class="form-card">
+<form action="https://formspree.io/f/xeolryra" method="POST">
+<label for="name-fr">Nom</label>
+<input id="name-fr" type="text" name="name" placeholder="Nom" required>
+<label for="email-fr">E-mail</label>
+<input id="email-fr" type="email" name="email" placeholder="E-mail" required>
+<label for="message-fr">Message</label>
+<textarea id="message-fr" name="message" placeholder="Votre message" rows="5" required></textarea>
+<button type="submit" class="btn-primary">Envoyer</button>
+</form>
+<p>Adresse: Obere Waiblinger Strasse 147a, 70374 Stuttgart | Téléphone: 0049 176 31591931 | E-mail: estaghvirou.b@gmail.com</p>
+</div>
+</section>
+
+<!-- Impressum -->
+<section id="impressum-de" class="lang-de">
+<h3>Impressum</h3>
+<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Telefon: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
+</section>
+<section id="impressum-en" class="lang-en hidden">
+<h3>Imprint</h3>
+<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Phone: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
+</section>
+<section id="impressum-fr" class="lang-fr hidden">
+<h3>Mentions Légales</h3>
+<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Téléphone: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
+</section>
+
+<!-- Datenschutz -->
+<section id="privacy-de" class="lang-de">
+<h3>Datenschutz</h3>
+<p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir verarbeiten Ihre Daten gemäß DSGVO.</p>
+</section>
+<section id="privacy-en" class="lang-en hidden">
+<h3>Privacy Policy</h3>
+<p>We take the protection of your personal data very seriously. We process your data in accordance with GDPR.</p>
+</section>
+<section id="privacy-fr" class="lang-fr hidden">
+<h3>Politique de Confidentialité</h3>
+<p>Nous prenons très au sérieux la protection de vos données personnelles. Nous traitons vos données conformément au RGPD.</p>
+</section>
+
+</main>
+
+<footer>
+<p>© 2025 AI & Data Solutions. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', ()=>{navMenu.classList.toggle('active');});
+
+// Mode toggle
+const modeToggle = document.getElementById('mode-toggle');
+modeToggle.addEventListener('click', ()=>{document.body.classList.toggle('light');});
+
+// Language switch
+const langButtons = document.querySelectorAll('.lang-switch');
+const sections = document.querySelectorAll('section, #hero-de, #hero-en, #hero-fr');
+langButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        langButtons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const lang = btn.id.split('-')[1];
+        sections.forEach(s=>{
+            if(s.classList.contains('lang-'+lang)){s.classList.remove('hidden');}
+            else{s.classList.add('hidden');}
+        });
+        // Update nav links text
+        const navLinks = navMenu.querySelectorAll('a');
+        if(lang==='de'){navLinks[0].textContent='Über uns';navLinks[1].textContent='Leistungen';navLinks[2].textContent='KI-Angebote';navLinks[3].textContent='Kontakt';navLinks[4].textContent='Impressum';navLinks[5].textContent='Datenschutz';}
+        if(lang==='en'){navLinks[0].textContent='About Us';navLinks[1].textContent='Services';navLinks[2].textContent='AI Solutions';navLinks[3].textContent='Contact';navLinks[4].textContent='Imprint';navLinks[5].textContent='Privacy';}
+        if(lang==='fr'){navLinks[0].textContent='À propos';navLinks[1].textContent='Services';navLinks[2].textContent='Solutions IA';navLinks[3].textContent='Contact';navLinks[4].textContent='Mentions Légales';navLinks[5].textContent='Politique de Confidentialité';}
+    });
+});
+
+// Animate cards on scroll
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');}
+    });
+},{threshold:0.1});
+cards.forEach(card=>observer.observe(card));
+</script>
+
+</body>
+</html>
